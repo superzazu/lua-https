@@ -35,6 +35,7 @@ endif ()
 add_library (https MODULE
 	lua/main.cpp
 )
+target_compile_features (https PRIVATE cxx_std_11)
 
 add_library (https-common STATIC
 	common/HTTPS.cpp
@@ -42,6 +43,7 @@ add_library (https-common STATIC
 	common/HTTPSClient.cpp
 	common/PlaintextConnection.cpp
 )
+target_compile_features (https-common PRIVATE cxx_std_11)
 
 add_library (https-curl STATIC EXCLUDE_FROM_ALL
 	generic/CurlClient.cpp
